@@ -11,5 +11,8 @@ class Constants {
         val API_KEY="07G0hgyLw8uBdLpoJGG1DimAzlYhvSsu"
         val BASE_URL="http://api.nytimes.com/"
 
+
+         val ARTICLE_DETAILS_URL="article_url"
+         val ARTICLE_ADX_KEYWORD="adx_keyword"
     }
 }

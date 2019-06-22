@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="article"
+                type="io.ramesh.populararticles.data.model.Article"/>
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:strokeColor="@color/colorPrimary"
+            android:layout_marginLeft="@dimen/num_5dp"
+            android:layout_marginTop="@dimen/num_5dp"
+            android:layout_marginRight="@dimen/num_5dp"
+            app:strokeWidth="3dp"
+            app:cardElevation="@dimen/num_10dp"
+            app:cardCornerRadius="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:padding="@dimen/num_5dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_article"
+                    android:layout_width="@dimen/num_75dp"
+                    android:layout_height="@dimen/num_75dp"
+                    android:layout_gravity="top"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_margin="10dp"
+                    android:scaleType="centerCrop"
+            />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{article.title}"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toRightOf="@+id/iv_article"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="@dimen/num_5dp"
+                    android:layout_marginLeft="@dimen/num_5dp"
+                    tools:text="@tools:sample/lorem"
+                    android:textStyle="bold"
+                    android:typeface="sans"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_authors"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                    app:layout_constraintLeft_toRightOf="@+id/iv_article"
+                    app:layout_constraintBottom_toTopOf="@+id/timeTxt"
+                    android:layout_marginBottom="@dimen/num_10dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:text="@{article.byline}"
+                    android:layout_marginLeft="@dimen/num_5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    tools:text="Authors"
+                    android:maxLines="2"
+                    android:textStyle="normal"
+                    android:typeface="sans"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/timeTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="@{article.published_date}"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp"
+                    tools:text="publishedDate"
+                    android:textStyle="normal"
+
+                    android:typeface="sans"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

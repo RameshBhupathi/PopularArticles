@@ -2,7 +2,7 @@ package io.ramesh.populararticles.di.modules
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import io.ramesh.populararticles.MainActivity
+import io.ramesh.populararticles.ui.articles.ArticlesActivity
 
 
 /**
@@ -13,7 +13,8 @@ import io.ramesh.populararticles.MainActivity
 @Module
 abstract class ActivityModule {
 
+
     @ContributesAndroidInjector
-    internal abstract fun contributeMainActivity(): MainActivity
+    internal abstract fun contributeArticlesActivity(): ArticlesActivity
 
 }
