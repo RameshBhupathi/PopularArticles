@@ -7,6 +7,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import io.ramesh.populararticles.di.ViewModelKey
 import io.ramesh.populararticles.ui.articles.ArticlesViewModel
+import io.ramesh.populararticles.ui.articles_details.ArticleDetailsViewModel
 import io.ramesh.populararticles.util.AppViewModelFactory
 
 
@@ -21,6 +22,12 @@ internal abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ArticlesViewModel::class)
     internal abstract fun bindArticlesViewModel(articlesViewModel: ArticlesViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ArticleDetailsViewModel::class)
+    internal abstract fun bindArticleDetailsViewModel(articleDetailsViewModel: ArticleDetailsViewModel): ViewModel
+
 
 
     @Binds
