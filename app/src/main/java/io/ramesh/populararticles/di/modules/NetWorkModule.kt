@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import io.ramesh.populararticles.BuildConfig
 import io.ramesh.populararticles.data.remote.ApiService
-import io.ramesh.populararticles.data.remote.HeaderInterceptor
+import io.ramesh.populararticles.data.remote.Requestnterceptor
 import io.ramesh.populararticles.util.Constants.Companion.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -29,7 +29,7 @@ class NetWorkModule {
         if (BuildConfig.DEBUG)
             httpClientBuilder.addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
 
-        httpClientBuilder.addInterceptor(HeaderInterceptor())
+        httpClientBuilder.addInterceptor(Requestnterceptor())
 
         return httpClientBuilder.build()
     }
