@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">PopularArticles</string>
+    <string name="app_name">Most Popular</string>
     <string name="internet_connection_error">Please check for Internet Connection</string>
 </resources>
